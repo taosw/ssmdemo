@@ -1,0 +1,61 @@
+package com.tao.ssmdemo.domain;
+
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
+import javax.annotation.Generated;
+import javax.validation.constraints.Min;
+
+/**
+ * Created by TAO on 2018/9/30.
+ */
+public class User {
+    private Integer id;
+    private String username;
+
+    @Min(value = 18,message = "未成年")
+    private Integer age;
+
+    private Integer customerid;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Integer getCustomerid() {
+        return customerid;
+    }
+
+    public void setCustomerid(Integer customerid) {
+        this.customerid = customerid;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", age=" + age +
+                ", customerid=" + customerid +
+                '}';
+    }
+}

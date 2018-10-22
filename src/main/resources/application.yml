@@ -1,0 +1,62 @@
+spring:
+  profiles:
+    active: prod
+  #redis单机配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+  #redis集群配置
+  #redis:
+    #host: 192.168.145.132
+    #port: 6379
+    #timeout: 20000
+    #cluster:
+      #nodes: 192.168.211.134:7000,192.168.211.134:7001
+      #maxRedirects: 6
+    #pool:
+      #max-active: 8
+      #max-wait: -1
+      #max-idle: 8
+      #min-idle: 0
+
+#mybatis配置
+mybatis:
+  #实体类扫描
+  #mapper-locations: /mapper/**.xml
+  type-aliases-package: com.tao.ssmdemo.domain
+  config_file: mybatis-config.xml
+  mapper-locations: classpath*:mapper/*.xml
+  #配置驼峰映射
+  #mapUnderscoreToCamelCase: true
+
+#服务端口配置
+server:
+  port: 8080
+  servlet:
+    context-path: /ssmdemo/
+  #application-path: ssmdemo
+
+
+#数据源配置
+jdbc:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/ssmspringboot?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+  password: 123
+  username: root
+
+#logging:
+ # config: classpath:log4j2.xml
+
+#pagehelper分页插件
+#pagehelper:
+  #helperDialect: mysql
+  #reasonable: true
+  #supportMethodsArguments: true
+  #params: count=countSql
+
