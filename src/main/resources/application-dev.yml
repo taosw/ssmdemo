@@ -17,6 +17,11 @@ spring:
   #aop配置
   aop:
     proxy-target-class: true
+  #日期格式
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
 
   # Redis配置
   #redis:

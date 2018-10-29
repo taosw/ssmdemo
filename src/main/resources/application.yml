@@ -11,6 +11,21 @@ spring:
       max-idle: 8
       min-idle: 0
     timeout: 0
+  #rabbitmq单机
+  rabbitmq:
+    addresses: 192.168.11.81:5672
+    username: guest
+    password: guest
+    virtual-host: /
+    connection-timeout: 15000
+    #rabbit监听器
+    listener:
+      simple:
+        concurrency: 5
+        max-concurrency: 10
+        acknowledge-mode: manual
+        prefetch: 1
+
   #redis集群配置
   #redis:
     #host: 192.168.145.132
@@ -24,6 +39,7 @@ spring:
       #max-wait: -1
       #max-idle: 8
       #min-idle: 0
+
 
 #mybatis配置
 mybatis:
